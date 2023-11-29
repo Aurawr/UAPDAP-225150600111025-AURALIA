@@ -130,7 +130,7 @@ section{
 }
 .heading{
     font-size: 5rem;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     text-align: center;
 }
 .about-img{
@@ -199,37 +199,44 @@ border-radius: 5rem;
 }
 
 .education .box-container .box i{
- position: absolute;
- top: -1.5rem; left: -2.5rem;
- height: 5rem;
- width: 5rem;
- border-radius: 50%;
- line-height: 5rem;
- text-align: center;
- font-size: 2rem;
- color: #fff;
- background: var(--yellow);
+    position: absolute;
+    top: -1.5rem; left: -2.5rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background: var(--yellow);
+}
+.art .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;    
 }
 
-/*.navigation .btnLogin-popup{
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
+
+.art .box-container .box{
+    height: 25rem;
+    width: 31rem;
+    border-radius: 1rem;
+    margin: 2rem;
+    overflow: hidden;
     cursor: pointer;
-    font-size: 1.1em;
-    color:#fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: .5s;
 }
 
-.navigation .btnLogin-popup:hover{
-    background: #fff;
-    color: #162938;
-} */
+.art .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.art .box-container .box:hover img {
+   transform: scale(1.2);
+}
 header{
    position: fixed;
    top: 0;
@@ -241,172 +248,68 @@ header{
    justify-content: space-between;
    align-items: center;
    z-index: 100;
+   transition: .3s;
 }
-
+.header.sticky{
+    background: var(--bg-color);
+}
 .logo{
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
 }
 
-/* img{
-    width: 22px;
-    height: 22px;
-    margin-right:4px;
-} */
-
-/* .wrapper{
-    position: relative;
-    width: 450px;
-    height: 450px;
-    background-color: #fff;
-    border-radius: 10px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: height .2s ease;
-    overflow: hidden;
+.contact {
+    min-height: auto;
+    padding-bottom: 7rem;
 }
 
-.wrapper.active{
-    height: 657px;
-}
-
-.wrapper .form-box{
-    width: 100%;
-    padding: 20px;
-}
-.wrapper .form-box.login{
-    transition:transform .18s ease;
-    transform: translateX(0);
-}
-.wrapper.active .form-box.login{
-    transition: none;
-    transform: translateX(-450px);
-}
-.wrapper .form-box.register{
-    position: absolute;
-    transition: none;
-    transform: translateX(450px);
-}
-.wrapper.active .form-box.register{
-    transition:transform .18s ease;
-    transform: translateX(0);
-}
-
-.form-box h2{
-    font-size: 2.5em;
-    color: black;
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
     text-align: center;
-    padding: 12px;
 }
-
-.form-box p{
-    font-size: 0.9em;
-    color: #808e99;
-    margin-top: 5px;
-}
-
-.input-box{
+.contact form .input-box{
     position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-}
-
-.input-box label{
-    position: absolute;
-    top: 5%;
-    left: 10px;
-    transform: translateY(-25%);
-    font-size: 1em;
-    color: black;
-    font-weight: 250;
-    pointer-events: none;
-}
-
-.input-box input{
-    width: 100%;
-    height: 25%;
-    background-color: #fff;
-    border: 10px  rgba(0, 0, 0, 0.2);
-    outline: auto;
-    border: 10px solid rgba(255, 255, 255, .2);
-    border-radius: 16px;
-    font-size: 16px;
-    color: black;
-    padding: 16px 20px 20px 20px;
-
-}
-
-.input-box input::placeholder{
-    color: #808e99;
-}
-
-.input-box i{
-    position: absolute;
-    right: 20px;
-    top: 60%;
-    transform: translateY(25%);
-    font-size: 20px;
-}
-
-.wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
-    font-size: 14.5px;
-    margin: 15px 0 15px;
+    flex-wrap: wrap;
 }
-.wrapper .ketentuan{
-    text-align: justify;
-    color: #808e99;
-    font-size: 0.9em;
-    margin-bottom: 15px;
-}
-
-.wrapper .btn{
+.contact form .input-box .input-field{
+    position: relative;
     width: 100%;
-    height: 35px;
-    background: #10B981;
-    border-radius: 10px ;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    color: black;
-    margin-top: 7px;
+    margin: .5rem 0;
+}
+.contact form .input-box .input-field input, .contact form .textarea-field textarea{
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+.contact form .input-box .input-field input::placeholder, .contact form .textarea-field textarea::placeholder{
+    color: var(--text-color);
+}
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
 }
 
-.wrapper .register-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin-top: 20px;
+.contact form .textarea-field textarea{
+    resize: none;
 }
-
-.register-link p{
-    color: #162938;
-    text-decoration: none;
-    font-weight: 600;
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1.7rem 9%;
+    background: var(--second-bg-color);
 }
-
-.register-link a{
-    color: #10B981;
+.footer-text p{
+    font-size: 1.6rem;
 }
-.wrapper .login-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin-top: 18px;
-}
-
-.login-link p{
-    color: #162938;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.login-link a{
-    color: #10B981;
-} */
